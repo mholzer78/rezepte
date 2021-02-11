@@ -11,14 +11,18 @@
 
 <body>
     <h1>rezepte.die-holzers.at</h1>
-    <div id="dishes" class="row"></div>
-    <div id="accordion" class="d-none">
+    <div id="dishes" class="container">
+        <div class="row">
+
+        </div>
+    </div>
+    <div id="recipe" class="container d-none">
         <div class="card">
             <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#description" aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="mb-0"></h5>
             </div>
 
-            <div id="description" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="description" class="collapse show" aria-labelledby="headingOne" data-parent="#recipe">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 col-md-3" id="image"></div>
@@ -33,21 +37,19 @@
                     Zutaten
                 </h5>
             </div>
-            <div id="ingredients" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    <table></table>
+            <div id="ingredients" class="collapse" aria-labelledby="headingTwo" data-parent="#recipe">
+                <div class="card-body container">
                 </div>
             </div>
         </div>
         <div class="card">
-            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#preparation" aria-expanded="false" aria-controls="collapseThree">
+            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#instructions" aria-expanded="false" aria-controls="collapseThree">
                 <h5 class="mb-0">
                     Zubereitung
                 </h5>
             </div>
-            <div id="preparation" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    <div></div>
+            <div id="instructions" class="collapse" aria-labelledby="headingThree" data-parent="#recipe">
+                <div class="card-body container">
                 </div>
             </div>
         </div>

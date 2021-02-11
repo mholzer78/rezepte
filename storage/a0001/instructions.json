@@ -24,11 +24,6 @@
     },
     {
         "type": "step",
-        "credentials": ["Milch"],
-        "description": "Unter ständigem Rhren die Milch zugeben und erneut so lange rühren bis die Sauce glatt ist"
-    },
-    {
-        "type": "step",
         "credentials": ["Käse"],
         "description": "Käse in die Sauce einrühren bis er vollständig zergangen ist"
     },

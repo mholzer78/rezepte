@@ -6,4 +6,25 @@ body {
 #dishes .card {
   text-align: center;
 }
-/*# sourceMappingURL=styles.css.map */
+
+#recipe .row {
+  height: 3rem;
+  border-top: 1px solid lightgrey;
+}
+
+#recipe .row:last-child {
+  border-bottom: 1px solid lightgrey;
+}
+
+#recipe #ingredients .check {
+  font-size: 2rem;
+}
+
+#recipe .play {
+  font-size: 2rem;
+}
+
+#recipe .progressBar {
+  border: 1px solid lightgrey;
+  text-align: center;
+}

@@ -3,7 +3,7 @@ var urlParams = new URLSearchParams(queryString);
 var recipe = urlParams.get('recipe');
 if (recipe) {
     document.getElementById('dishes').classList.toggle('d-none');
-    document.getElementById('accordion').classList.toggle('d-none');
+    document.getElementById('recipe').classList.toggle('d-none');
     var httpStorage = new XMLHttpRequest();
     httpStorage.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -12,14 +12,14 @@ if (recipe) {
                 return item.folder == recipe;
             })[0];
             var title = document.createTextNode(curRecipe.name);
-            document.querySelector('#accordion .card-header h5').appendChild(title);
+            document.querySelector('#recipe .card-header h5').appendChild(title);
             var description = document.createTextNode(curRecipe.description);
-            document.querySelector('#accordion .card-body #descText').appendChild(description);
+            document.querySelector('#recipe .card-body #descText').appendChild(description);
             var image = document.createElement("img");
             image.className = 'img-fluid';
             image.setAttribute('src', 'storage/' + curRecipe.folder + '/' + curRecipe.image);
             image.setAttribute('alt', curRecipe.name);
-            document.querySelector('#accordion .card-body #image').appendChild(image);
+            document.querySelector('#recipe .card-body #image').appendChild(image);
         }
     };
     httpStorage.open('GET', 'storage/storage.json', true);
@@ -30,18 +30,25 @@ if (recipe) {
             var credentials = JSON.parse(this.responseText);
             for (var _i = 0, credentials_1 = credentials; _i < credentials_1.length; _i++) {
                 var credential = credentials_1[_i];
-                var tr = document.createElement("tr");
-                var td1 = document.createElement("td");
-                var td2 = document.createElement("td");
+                var div = document.createElement("div");
+                div.className = 'row align-items-center';
+                var sub1 = document.createElement("div");
+                sub1.className = 'col-1 check';
+                var sub2 = document.createElement("div");
+                sub2.className = 'col-2';
+                var sub3 = document.createElement("div");
+                sub3.className = 'col-9';
+                var sub1text = document.createTextNode('X');
                 var tempText = credential.amount + ' ' + credential.unit;
                 if (credential.appendix) {
                     tempText = tempText + ' (' + credential.appendix + ')';
                 }
-                var td1text = document.createTextNode(credential.name);
-                var td2text = document.createTextNode(tempText);
-                tr.appendChild(td1).appendChild(td1text);
-                tr.appendChild(td2).appendChild(td2text);
-                document.querySelector('#ingredients table').appendChild(tr);
+                var sub2text = document.createTextNode(credential.name);
+                var sub3text = document.createTextNode(tempText);
+                div.appendChild(sub1).appendChild(sub1text);
+                div.appendChild(sub2).appendChild(sub2text);
+                div.appendChild(sub3).appendChild(sub3text);
+                document.querySelector('#ingredients div.card-body').appendChild(div);
             }
         }
     };
@@ -53,23 +60,63 @@ if (recipe) {
             var instructions = JSON.parse(this.responseText);
             for (var _i = 0, instructions_1 = instructions; _i < instructions_1.length; _i++) {
                 var instruction = instructions_1[_i];
-                var div = document.createElement("div");
                 if (instruction.type == 'step') {
+                    var div = document.createElement("div");
+                    div.className = 'row align-items-center';
+                    var sub1 = document.createElement("div");
+                    sub1.className = 'col-1 check';
+                    var sub2 = document.createElement("div");
+                    sub2.className = 'col-3';
+                    var sub3 = document.createElement("div");
+                    sub3.className = 'col-9';
+                    var sub1text = document.createTextNode('X');
                     if (instruction.credentials) {
-                        var credentials = document.createElement("div");
-                        var credentialsText = document.createTextNode(instruction.credentials.join(', '));
-                        div.appendChild(credentials).appendChild(credentialsText);
+                        var sub2text = document.createTextNode(instruction.credentials.join(', '));
+                        sub2.appendChild(sub2text);
                     }
-                    var step = document.createElement("div");
-                    var stepText = document.createTextNode(instruction.description);
-                    div.appendChild(step).appendChild(stepText);
+                    var sub3text = document.createTextNode(instruction.description);
+                    div.appendChild(sub1).appendChild(sub1text);
+                    div.appendChild(sub2);
+                    div.appendChild(sub3).appendChild(sub3text);
+                    document.querySelector('#instructions div.card-body').appendChild(div);
                 }
                 else if (instruction.type == 'break') {
-                    var cook = document.createElement("div");
-                    var cookText = document.createTextNode(instruction.duration);
-                    div.appendChild(cook).appendChild(cookText);
+                    var div = document.createElement("div");
+                    div.className = 'row align-items-center';
+                    var sub1 = document.createElement("div");
+                    sub1.className = 'col-1 check';
+                    var sub2 = document.createElement("div");
+                    sub2.className = 'col-2 d-flex align-items-center justify-content-between';
+                    var sub3 = document.createElement("div");
+                    sub3.className = 'col-9';
+                    var sub1text = document.createTextNode('X');
+                    var tempText = instruction.tool.name;
+                    if (instruction.tool.degrees) {
+                        tempText = tempText + ' (' + instruction.tool.degrees + '°';
+                        if (instruction.tool.mode) {
+                            tempText = tempText + ' ' + instruction.tool.mode;
+                        }
+                        tempText = tempText + ')';
+                    }
+                    var sub2left = document.createElement('div');
+                    var sub2leftText = document.createTextNode(tempText);
+                    var sub2right = document.createElement('div');
+                    sub2right.className = 'play';
+                    var sub2rightText = document.createTextNode('X');
+                    var sub3bar = document.createElement('div');
+                    sub3bar.className = 'w-100 progressBar';
+                    var sub3barText = document.createTextNode(String(instruction.duration / 60) + ' Minuten');
+                    var sub3desc = document.createElement('div');
+                    var sub3descText = document.createTextNode(instruction.description);
+                    sub2.appendChild(sub2left).appendChild(sub2leftText);
+                    sub2.appendChild(sub2right).appendChild(sub2rightText);
+                    sub3.appendChild(sub3bar).appendChild(sub3barText);
+                    sub3.appendChild(sub3desc).appendChild(sub3descText);
+                    div.appendChild(sub1).appendChild(sub1text);
+                    div.appendChild(sub2);
+                    div.appendChild(sub3);
+                    document.querySelector('#instructions div.card-body').appendChild(div);
                 }
-                document.querySelector('#preparation .card-body > div').appendChild(div);
             }
         }
     };

@@ -7,3 +7,24 @@ body {
         text-align: center;
     }
 }
+#recipe {
+    .row {
+        height: 3rem;
+        border-top: 1px solid lightgrey;
+        &:last-child {
+            border-bottom: 1px solid lightgrey;
+        }
+    }
+    #ingredients {
+        .check {
+            font-size: 2rem;
+        }
+    }
+    .play {
+        font-size: 2rem;
+    }
+    .progressBar {
+        border: 1px solid lightgrey;
+        text-align: center;
+    }
+}
