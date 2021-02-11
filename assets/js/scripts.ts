@@ -13,16 +13,13 @@ if (recipe) {
             let curRecipe = storage.filter(function(item){
                 return item.folder == recipe;
             })[0];
-            let curImage = storage.filter(function(item){
-                return item.image == recipe;
-            })[0];
             let title = document.createTextNode(curRecipe.name);
             document.querySelector('#accordion .card-header h5').appendChild(title);
             let description = document.createTextNode(curRecipe.description);
             document.querySelector('#accordion .card-body #descText').appendChild(description);
             let image = document.createElement("img");
             image.className = 'img-fluid';
-            image.setAttribute('src', 'storage/'+curRecipe+'/'+curImage);
+            image.setAttribute('src', 'storage/'+curRecipe.folder+'/'+curRecipe.image);
             image.setAttribute('alt', curRecipe.name);
             document.querySelector('#accordion .card-body #image').appendChild(image);
         }
