@@ -16,10 +16,7 @@ body {
   border-bottom: 1px solid lightgrey;
 }
 
-#recipe #ingredients .check {
-  font-size: 2rem;
-}
-
+#recipe .check,
 #recipe .play {
   font-size: 2rem;
 }

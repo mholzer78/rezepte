@@ -64,32 +64,32 @@ if (recipe) {
                     var div = document.createElement("div");
                     div.className = 'row align-items-center';
                     var sub1 = document.createElement("div");
-                    sub1.className = 'col-1 check';
+                    sub1.className = 'col-3 d-flex align-items-center';
                     var sub2 = document.createElement("div");
-                    sub2.className = 'col-3';
-                    var sub3 = document.createElement("div");
-                    sub3.className = 'col-9';
-                    var sub1text = document.createTextNode('X');
+                    sub2.className = 'col-9';
+                    var sub1a = document.createElement('div');
+                    sub1a.className = 'check';
+                    var sub1aText = document.createTextNode('X');
+                    var sub1b = document.createElement('div');
+                    sub1b.className = 'mr-auto px-3';
                     if (instruction.credentials) {
-                        var sub2text = document.createTextNode(instruction.credentials.join(', '));
-                        sub2.appendChild(sub2text);
+                        var sub1bText = document.createTextNode(instruction.credentials.join(', '));
+                        sub1b.appendChild(sub1bText);
                     }
-                    var sub3text = document.createTextNode(instruction.description);
-                    div.appendChild(sub1).appendChild(sub1text);
-                    div.appendChild(sub2);
-                    div.appendChild(sub3).appendChild(sub3text);
+                    var sub2text = document.createTextNode(instruction.description);
+                    sub1.appendChild(sub1a).appendChild(sub1aText);
+                    sub1.appendChild(sub1b);
+                    div.appendChild(sub1);
+                    div.appendChild(sub2).appendChild(sub2text);
                     document.querySelector('#instructions div.card-body').appendChild(div);
                 }
                 else if (instruction.type == 'break') {
                     var div = document.createElement("div");
                     div.className = 'row align-items-center';
                     var sub1 = document.createElement("div");
-                    sub1.className = 'col-1 check';
+                    sub1.className = 'col-3 d-flex align-items-center justify-content-between';
                     var sub2 = document.createElement("div");
-                    sub2.className = 'col-2 d-flex align-items-center justify-content-between';
-                    var sub3 = document.createElement("div");
-                    sub3.className = 'col-9';
-                    var sub1text = document.createTextNode('X');
+                    sub2.className = 'col-9';
                     var tempText = instruction.tool.name;
                     if (instruction.tool.degrees) {
                         tempText = tempText + ' (' + instruction.tool.degrees + '°';
@@ -98,23 +98,27 @@ if (recipe) {
                         }
                         tempText = tempText + ')';
                     }
-                    var sub2left = document.createElement('div');
-                    var sub2leftText = document.createTextNode(tempText);
-                    var sub2right = document.createElement('div');
-                    sub2right.className = 'play';
-                    var sub2rightText = document.createTextNode('X');
-                    var sub3bar = document.createElement('div');
-                    sub3bar.className = 'w-100 progressBar';
-                    var sub3barText = document.createTextNode(String(instruction.duration / 60) + ' Minuten');
-                    var sub3desc = document.createElement('div');
-                    var sub3descText = document.createTextNode(instruction.description);
-                    sub2.appendChild(sub2left).appendChild(sub2leftText);
-                    sub2.appendChild(sub2right).appendChild(sub2rightText);
-                    sub3.appendChild(sub3bar).appendChild(sub3barText);
-                    sub3.appendChild(sub3desc).appendChild(sub3descText);
-                    div.appendChild(sub1).appendChild(sub1text);
+                    var sub1a = document.createElement('div');
+                    sub1a.className = 'check';
+                    var sub1aText = document.createTextNode('X');
+                    var sub1b = document.createElement('div');
+                    sub1b.className = 'mr-auto px-3';
+                    var sub1bText = document.createTextNode(tempText);
+                    var sub1c = document.createElement('div');
+                    sub1c.className = 'play';
+                    var sub1cText = document.createTextNode('X');
+                    var sub2bar = document.createElement('div');
+                    sub2bar.className = 'w-100 progressBar';
+                    var sub2barText = document.createTextNode(String(instruction.duration / 60) + ' Minuten');
+                    var sub2desc = document.createElement('div');
+                    var sub2descText = document.createTextNode(instruction.description);
+                    sub1.appendChild(sub1a).appendChild(sub1aText);
+                    sub1.appendChild(sub1b).appendChild(sub1bText);
+                    sub1.appendChild(sub1c).appendChild(sub1cText);
+                    sub2.appendChild(sub2bar).appendChild(sub2barText);
+                    sub2.appendChild(sub2desc).appendChild(sub2descText);
+                    div.appendChild(sub1);
                     div.appendChild(sub2);
-                    div.appendChild(sub3);
                     document.querySelector('#instructions div.card-body').appendChild(div);
                 }
             }
