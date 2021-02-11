@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Nudeln mit Bechamel-Sauce",
+        "folder": "a0001",
+        "image": "image.jpg",
+        "description": "Rezept aus Luxembourg",
+        "sort": 0
+    },
+    {
+        "name": "Strata (Brotauflauf)",
+        "folder": "a0002",
+        "image": "image.jpg",
+        "description": "Sehr lecker und variabel",
+        "sort": 0
+    }
+
+]

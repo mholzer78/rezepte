@@ -1,0 +1,17 @@
+[
+    {
+        "type": "step",
+        "credentials": ["string/optional"],
+        "description": "string/mandatory"
+    },
+    {
+        "type": "break",
+        "length": "integer/mandatory",
+        "tool": {
+            "name": "string/optional",
+            "mode": "string/optional",
+            "degrees": "integer/optional"
+        },
+        "description": "string/mandatory"
+    }
+]

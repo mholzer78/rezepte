@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rezepte von die-holzers.at</title>
+    <link rel="stylesheet" href="https://rezepte.die-holzers.at/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <h1>rezepte.die-holzers.at</h1>
+    <div id="dishes" class="row">
+    </div>
+    <div id="accordion" class="d-none">
+        <div class="card">
+            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#description" aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="mb-0"></h5>
+            </div>
+
+            <div id="description" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <img class="img-fluid" src="storage/a0001/image.jpg" alt="$$$">       
+                        </div>
+                        <div class="col-6 col-md-9" id="descText"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#ingredients" aria-expanded="false" aria-controls="collapseTwo">
+                <h5 class="mb-0">
+                    Zutaten
+                </h5>
+            </div>
+            <div id="ingredients" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <table></table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#preparation" aria-expanded="false" aria-controls="collapseThree">
+                <h5 class="mb-0">
+                    Zubereitung
+                </h5>
+            </div>
+            <div id="preparation" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <table><tr><td>$$$</td></tr></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://rezepte.die-holzers.at/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rezepte.die-holzers.at/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async="" src="assets/js/scripts.js"></script>
+</body>
+
+</html>
