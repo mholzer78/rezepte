@@ -22,6 +22,7 @@ if (recipe) {
             image.className = 'img-fluid';
             image.setAttribute('src', 'storage/' + curRecipe + '/' + curImage);
             image.setAttribute('alt', curRecipe.name);
+            document.querySelector('#accordion .card-body #image').appendChild(image);
         }
     };
     httpStorage.open('GET', 'storage/storage.json', true);
