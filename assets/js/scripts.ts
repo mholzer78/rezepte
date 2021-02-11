@@ -59,14 +59,19 @@ if (recipe) {
                 let div = document.createElement("div");
                 if (instruction.type == 'step') {
                     if (instruction.credentials) {
-                        let step = document.createElement("div");
-                        let stepText = document.createTextNode(instruction.credentials.join(', '));
-                        document.querySelector('#ingredients table').appendChild(step).appendChild(stepText);
+                        let credentials = document.createElement("div");
+                        let credentialsText = document.createTextNode(instruction.credentials.join(', '));
+                        div.appendChild(credentials).appendChild(credentialsText);
                     }
+                    let step = document.createElement("div");
+                    let stepText = document.createTextNode(instruction.description);
+                    div.appendChild(step).appendChild(stepText);
                 } else if (instruction.type == 'break') {
                     let cook = document.createElement("div");
                     let cookText = document.createTextNode(instruction.duration);
+                    div.appendChild(cook).appendChild(cookText);
                 }
+                document.querySelector('#ingredients table').appendChild(div);
             }
         }
     };
