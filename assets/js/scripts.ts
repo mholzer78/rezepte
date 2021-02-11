@@ -27,8 +27,8 @@ if (recipe) {
     httpStorage.open('GET', 'storage/storage.json', true);
     httpStorage.send();   
 
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
+    let httpCredentials = new XMLHttpRequest();
+    httpCredentials.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let credentials = JSON.parse(this.responseText);
             for (let credential of credentials) {
@@ -48,8 +48,30 @@ if (recipe) {
             }
         }
     };
-    xmlhttp.open('GET', 'storage/'+recipe+'/credentials.json', true);
-    xmlhttp.send();   
+    httpCredentials.open('GET', 'storage/'+recipe+'/credentials.json', true);
+    httpCredentials.send();
+
+    let httpInstructions = new XMLHttpRequest();
+    httpInstructions.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let instructions = JSON.parse(this.responseText);
+            for (let instruction of instructions) {
+                let div = document.createElement("div");
+                if (instruction.type == 'step') {
+                    if (instruction.credentials) {
+                        let step = document.createElement("div");
+                        let stepText = document.createTextNode(instruction.credentials.join(', '));
+                        document.querySelector('#ingredients table').appendChild(step).appendChild(stepText);
+                    }
+                } else if (instruction.type == 'break') {
+                    let cook = document.createElement("div");
+                    let cookText = document.createTextNode(instruction.duration);
+                }
+            }
+        }
+    };
+    httpInstructions.open('GET', 'storage/'+recipe+'/instructions.json', true);
+    httpInstructions.send();  
 } else {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -90,6 +112,3 @@ if (recipe) {
     xmlhttp.open('GET', 'storage/storage.json', true);
     xmlhttp.send();   
 }
-
-/*
-*/

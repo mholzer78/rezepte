@@ -21,7 +21,7 @@
     },
     {
         "type": "break",
-        "length": 1800,
+        "duration": 1800,
         "tool": {
             "name": "Kühlschrank"
         },
@@ -34,7 +34,7 @@
     },
     {
         "type": "break",
-        "length": 1500,
+        "duration": 1500,
         "tool": {
             "name": "Ofen",
             "mode": "Ober/Unterhitze",
@@ -44,7 +44,7 @@
     },
     {
         "type": "break",
-        "length": 900,
+        "duration": 900,
         "tool": {
             "name": "Ofen",
             "mode": "Ober/Unterhitze",

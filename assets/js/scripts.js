@@ -24,8 +24,8 @@ if (recipe) {
     };
     httpStorage.open('GET', 'storage/storage.json', true);
     httpStorage.send();
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
+    var httpCredentials = new XMLHttpRequest();
+    httpCredentials.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var credentials = JSON.parse(this.responseText);
             for (var _i = 0, credentials_1 = credentials; _i < credentials_1.length; _i++) {
@@ -45,8 +45,31 @@ if (recipe) {
             }
         }
     };
-    xmlhttp.open('GET', 'storage/' + recipe + '/credentials.json', true);
-    xmlhttp.send();
+    httpCredentials.open('GET', 'storage/' + recipe + '/credentials.json', true);
+    httpCredentials.send();
+    var httpInstructions = new XMLHttpRequest();
+    httpInstructions.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var instructions = JSON.parse(this.responseText);
+            for (var _i = 0, instructions_1 = instructions; _i < instructions_1.length; _i++) {
+                var instruction = instructions_1[_i];
+                var div = document.createElement("div");
+                if (instruction.type == 'step') {
+                    if (instruction.credentials) {
+                        var step = document.createElement("div");
+                        var stepText = document.createTextNode(instruction.credentials.join(', '));
+                        document.querySelector('#ingredients table').appendChild(step).appendChild(stepText);
+                    }
+                }
+                else if (instruction.type == 'break') {
+                    var cook = document.createElement("div");
+                    var cookText = document.createTextNode(instruction.duration);
+                }
+            }
+        }
+    };
+    httpInstructions.open('GET', 'storage/' + recipe + '/instructions.json', true);
+    httpInstructions.send();
 }
 else {
     var xmlhttp = new XMLHttpRequest();
@@ -83,6 +106,4 @@ else {
     xmlhttp.open('GET', 'storage/storage.json', true);
     xmlhttp.send();
 }
-/*
-*/ 
 //# sourceMappingURL=scripts.js.map
