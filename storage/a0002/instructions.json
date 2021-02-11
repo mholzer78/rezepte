@@ -1,0 +1,55 @@
+[
+    {
+        "type": "step",
+        "credentials": ["Weißbrot"],
+        "description": "Das Weißbrot zunächst in Scheiben schneiden und diese dann grob auseinander zupfen."
+    },
+    {
+        "type": "step",
+        "credentials": ["Speckwürfel"],
+        "description": "Speckwürfel in einer Pfanne ohne Beigabe von zusätzlichem fett auslassen und knusprig braten."
+    },
+    {
+        "type": "step",
+        "credentials": ["Eier","Milch"],
+        "description": "In einer Schüssel Eier mit Milch verquirlen"
+    },
+    {
+        "type": "step",
+        "credentials": ["Brot","Speck","Käse"],
+        "description": "Brot, Speck und die Hälfte des Käses in die Eiermischung geben und alles gut vermengen."
+    },
+    {
+        "type": "break",
+        "length": 1800,
+        "tool": {
+            "name": "Kühlschrank"
+        },
+        "description": "Das Ganze eine halbe Stunde im Kühlschrank ziehen lassen."
+    },
+    {
+        "type": "step",
+        "credentials": [],
+        "description": "Brot-Eier-Mischung in eine gefettete Auflaufform gießen, dann mit dem restlichen Käse bestreuen."
+    },
+    {
+        "type": "break",
+        "length": 1500,
+        "tool": {
+            "name": "Ofen",
+            "mode": "Ober/Unterhitze",
+            "degrees": 200 
+        },
+        "description": "Das Ganze mit Alufolie abdecken und 25 Minuten backen lassen."
+    },
+    {
+        "type": "break",
+        "length": 900,
+        "tool": {
+            "name": "Ofen",
+            "mode": "Ober/Unterhitze",
+            "degrees": 200 
+        },
+        "description": "Nun die Folie entfernen und alles weitere 15 Minuten backen, bis sich eine goldene Kruste gebildet hat."
+    }
+]
