@@ -11,10 +11,17 @@ if (recipe) {
             var curRecipe = storage.filter(function (item) {
                 return item.folder == recipe;
             })[0];
+            var curImage = storage.filter(function (item) {
+                return item.image == recipe;
+            })[0];
             var title = document.createTextNode(curRecipe.name);
             document.querySelector('#accordion .card-header h5').appendChild(title);
             var description = document.createTextNode(curRecipe.description);
             document.querySelector('#accordion .card-body #descText').appendChild(description);
+            var image = document.createElement("img");
+            image.className = 'img-fluid';
+            image.setAttribute('src', 'storage/' + curRecipe + '/' + curImage);
+            image.setAttribute('alt', curRecipe.name);
         }
     };
     httpStorage.open('GET', 'storage/storage.json', true);

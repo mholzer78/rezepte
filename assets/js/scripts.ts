@@ -23,7 +23,7 @@ if (recipe) {
             let image = document.createElement("img");
             image.className = 'img-fluid';
             image.setAttribute('src', 'storage/'+curRecipe+'/'+curImage);
-            image.setAttribute('alt', title);
+            image.setAttribute('alt', curRecipe.name);
         }
     };
     httpStorage.open('GET', 'storage/storage.json', true);
