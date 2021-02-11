@@ -11,12 +11,19 @@ if (recipe) {
         if (this.readyState == 4 && this.status == 200) {
             let storage = JSON.parse(this.responseText);
             let curRecipe = storage.filter(function(item){
-                return item.folder == recipe;         
+                return item.folder == recipe;
+            })[0];
+            let curImage = storage.filter(function(item){
+                return item.image == recipe;
             })[0];
             let title = document.createTextNode(curRecipe.name);
             document.querySelector('#accordion .card-header h5').appendChild(title);
             let description = document.createTextNode(curRecipe.description);
             document.querySelector('#accordion .card-body #descText').appendChild(description);
+            let image = document.createElement("img");
+            image.className = 'img-fluid';
+            image.setAttribute('src', 'storage/'+curRecipe+'/'+curImage);
+            image.setAttribute('alt', title);
         }
     };
     httpStorage.open('GET', 'storage/storage.json', true);
