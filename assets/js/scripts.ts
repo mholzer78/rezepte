@@ -71,7 +71,7 @@ if (recipe) {
                     let cookText = document.createTextNode(instruction.duration);
                     div.appendChild(cook).appendChild(cookText);
                 }
-                document.querySelector('#ingredients table').appendChild(div);
+                document.querySelector('#preparation .card-body > div').appendChild(div);
             }
         }
     };
