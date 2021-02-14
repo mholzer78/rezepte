@@ -31,14 +31,18 @@ if (recipe) {
             for (var _i = 0, credentials_1 = credentials; _i < credentials_1.length; _i++) {
                 var credential = credentials_1[_i];
                 var div = document.createElement("div");
-                div.className = 'row align-items-center';
+                div.className = 'row';
+                div.addEventListener("click", function () {
+                    this.classList.toggle("checked");
+                });
                 var sub1 = document.createElement("div");
                 sub1.className = 'col-1 check';
                 var sub2 = document.createElement("div");
                 sub2.className = 'col-2';
                 var sub3 = document.createElement("div");
                 sub3.className = 'col-9';
-                var sub1text = document.createTextNode('X');
+                var sub1text = document.createElement('i');
+                sub1text.className = 'far fa-square';
                 var tempText = credential.amount + ' ' + credential.unit;
                 if (credential.appendix) {
                     tempText = tempText + ' (' + credential.appendix + ')';
@@ -62,14 +66,18 @@ if (recipe) {
                 var instruction = instructions_1[_i];
                 if (instruction.type == 'step') {
                     var div = document.createElement("div");
-                    div.className = 'row align-items-center';
+                    div.className = 'row';
+                    div.addEventListener("click", function () {
+                        this.classList.toggle("checked");
+                    });
                     var sub1 = document.createElement("div");
                     sub1.className = 'col-3 d-flex align-items-center';
                     var sub2 = document.createElement("div");
                     sub2.className = 'col-9';
                     var sub1a = document.createElement('div');
                     sub1a.className = 'check';
-                    var sub1aText = document.createTextNode('X');
+                    var sub1aText = document.createElement('i');
+                    sub1aText.className = 'far fa-square';
                     var sub1b = document.createElement('div');
                     sub1b.className = 'mr-auto px-3';
                     if (instruction.credentials) {
@@ -85,7 +93,10 @@ if (recipe) {
                 }
                 else if (instruction.type == 'break') {
                     var div = document.createElement("div");
-                    div.className = 'row align-items-center';
+                    div.className = 'row';
+                    div.addEventListener("click", function () {
+                        this.classList.toggle("checked");
+                    });
                     var sub1 = document.createElement("div");
                     sub1.className = 'col-3 d-flex align-items-center justify-content-between';
                     var sub2 = document.createElement("div");
@@ -100,13 +111,15 @@ if (recipe) {
                     }
                     var sub1a = document.createElement('div');
                     sub1a.className = 'check';
-                    var sub1aText = document.createTextNode('X');
+                    var sub1aText = document.createElement('i');
+                    sub1aText.className = 'far fa-square';
                     var sub1b = document.createElement('div');
                     sub1b.className = 'mr-auto px-3';
                     var sub1bText = document.createTextNode(tempText);
                     var sub1c = document.createElement('div');
                     sub1c.className = 'play';
-                    var sub1cText = document.createTextNode('X');
+                    var sub1cText = document.createElement('i');
+                    sub1cText.className = 'fas fa-hourglass-start';
                     var sub2bar = document.createElement('div');
                     sub2bar.className = 'w-100 progressBar';
                     var sub2barText = document.createTextNode(String(instruction.duration / 60) + ' Minuten');

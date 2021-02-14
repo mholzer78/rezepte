@@ -33,7 +33,10 @@ if (recipe) {
             let credentials = JSON.parse(this.responseText);
             for (let credential of credentials) {
                 let div = document.createElement("div");
-                div.className = 'row align-items-center';
+                div.className = 'row';
+                div.addEventListener("click", function () {
+                    this.classList.toggle("checked");
+                });
                 let sub1 = document.createElement("div");
                 sub1.className = 'col-1 check';
                 let sub2 = document.createElement("div");
@@ -41,7 +44,8 @@ if (recipe) {
                 let sub3 = document.createElement("div");
                 sub3.className = 'col-9';
 
-                let sub1text = document.createTextNode('X');
+                let sub1text = document.createElement('i');
+                sub1text.className = 'far fa-square';
                 let tempText = credential.amount + ' ' + credential.unit;
                 if (credential.appendix) {
                     tempText = tempText + ' (' + credential.appendix + ')'
@@ -65,7 +69,10 @@ if (recipe) {
             for (let instruction of instructions) {
                 if (instruction.type == 'step') {
                     let div = document.createElement("div");
-                    div.className = 'row align-items-center';
+                    div.className = 'row';
+                    div.addEventListener("click", function () {
+                        this.classList.toggle("checked");
+                    });
                     let sub1 = document.createElement("div");
                     sub1.className = 'col-3 d-flex align-items-center';
                     let sub2 = document.createElement("div");
@@ -73,7 +80,8 @@ if (recipe) {
 
                     let sub1a = document.createElement('div');
                     sub1a.className = 'check';
-                    let sub1aText = document.createTextNode('X');
+                    let sub1aText = document.createElement('i');
+                    sub1aText.className = 'far fa-square';
 
                     let sub1b = document.createElement('div');
                     sub1b.className = 'mr-auto px-3';
@@ -92,7 +100,10 @@ if (recipe) {
                     document.querySelector('#instructions div.card-body').appendChild(div);
                 } else if (instruction.type == 'break') {
                     let div = document.createElement("div");
-                    div.className = 'row align-items-center';
+                    div.className = 'row';
+                    div.addEventListener("click", function () {
+                        this.classList.toggle("checked");
+                    });
                     let sub1 = document.createElement("div");
                     sub1.className = 'col-3 d-flex align-items-center justify-content-between';
                     let sub2 = document.createElement("div");
@@ -108,7 +119,8 @@ if (recipe) {
                     }
                     let sub1a = document.createElement('div');
                     sub1a.className = 'check';
-                    let sub1aText = document.createTextNode('X');
+                    let sub1aText = document.createElement('i');
+                    sub1aText.className = 'far fa-square';
 
                     let sub1b = document.createElement('div');
                     sub1b.className = 'mr-auto px-3';
@@ -116,7 +128,8 @@ if (recipe) {
 
                     let sub1c = document.createElement('div');
                     sub1c.className = 'play';
-                    let sub1cText = document.createTextNode('X');
+                    let sub1cText = document.createElement('i');
+                    sub1cText.className = 'fas fa-hourglass-start';
 
                     let sub2bar = document.createElement('div');
                     sub2bar.className = 'w-100 progressBar';

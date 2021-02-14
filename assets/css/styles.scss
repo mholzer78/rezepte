@@ -1,6 +1,9 @@
+.card-body {
+    padding: 0 1rem;
+}
+
 body {
     background: lightgray;
-    color: blue;
 }
 #dishes {
     .card {
@@ -8,12 +11,12 @@ body {
     }
 }
 #recipe {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
     .row {
-        height: 3rem;
-        border-top: 1px solid lightgrey;
-        &:last-child {
-            border-bottom: 1px solid lightgrey;
-        }
+        border-bottom: 1px solid lightgrey;
     }
     .check,
     .play {
@@ -22,5 +25,28 @@ body {
     .progressBar {
         border: 1px solid lightgrey;
         text-align: center;
+    }
+    #ingredients {
+        .row {
+            align-items: center;
+            &.checked {
+                order: 100;
+                color: darkgray;
+                .fa-square:before {
+                    content: "\f14a"
+                }
+            }
+        }
+    }
+    #instructions {
+        .row {
+            align-items: center;
+            &.checked {
+                color: darkgray;                
+                .fa-square:before {
+                    content: "\f14a"
+                }
+            }
+        }
     }
 }

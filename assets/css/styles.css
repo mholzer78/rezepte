@@ -1,18 +1,21 @@
+.card-body {
+  padding: 0 1rem;
+}
+
 body {
   background: lightgray;
-  color: blue;
 }
 
 #dishes .card {
   text-align: center;
 }
 
-#recipe .row {
-  height: 3rem;
-  border-top: 1px solid lightgrey;
+#recipe .container {
+  display: flex;
+  flex-direction: column;
 }
 
-#recipe .row:last-child {
+#recipe .row {
   border-bottom: 1px solid lightgrey;
 }
 
@@ -24,4 +27,29 @@ body {
 #recipe .progressBar {
   border: 1px solid lightgrey;
   text-align: center;
+}
+
+#recipe #ingredients .row {
+  align-items: center;
+}
+
+#recipe #ingredients .row.checked {
+  order: 100;
+  color: darkgray;
+}
+
+#recipe #ingredients .row.checked .fa-square:before {
+  content: "\f14a";
+}
+
+#recipe #instructions .row {
+  align-items: center;
+}
+
+#recipe #instructions .row.checked {
+  color: darkgray;
+}
+
+#recipe #instructions .row.checked .fa-square:before {
+  content: "\f14a";
 }
