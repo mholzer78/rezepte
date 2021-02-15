@@ -123,9 +123,9 @@ if (recipe) {
                     var sub2progress = document.createElement('div');
                     sub2progress.className = 'progress';
                     var sub2progressBar = document.createElement('div');
-                    sub2progressBar.className = 'progress-bar';
+                    sub2progressBar.className = 'progressBar';
                     var sub2progressText = document.createElement('div');
-                    sub2progressText.className = 'progress-bar';
+                    sub2progressText.className = 'progressText';
                     sub2progressText.innerHTML = String(instruction.duration / 60) + ' Minuten';
                     var sub2desc = document.createElement('div');
                     var sub2descText = document.createTextNode(instruction.description);
