@@ -146,9 +146,11 @@ if (recipe) {
                     sub1.appendChild(sub1b).appendChild(sub1bText);
                     sub1.appendChild(sub1c).appendChild(sub1cText);
 
-                    sub2.appendChild(sub2progress).appendChild(sub2progressBar);
-                    sub2.appendChild(sub2progress).appendChild(sub2progressText);
-                    sub2.appendChild(sub2desc).appendChild(sub2progress);
+                    sub2progress.appendChild(sub2progressBar);
+                    sub2progress.appendChild(sub2progressText);
+
+                    sub2.appendChild(sub2progress);
+                    sub2.appendChild(sub2desc).appendChild(sub2descText);
                     
                     div.appendChild(sub1);
                     div.appendChild(sub2);
