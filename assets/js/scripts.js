@@ -121,8 +121,14 @@ if (recipe) {
                     var sub1cText = document.createElement('i');
                     sub1cText.className = 'fas fa-hourglass-start';
                     var sub2bar = document.createElement('div');
-                    sub2bar.className = 'w-100 progressBar';
-                    var sub2barText = document.createTextNode(String(instruction.duration / 60) + ' Minuten');
+                    sub2bar.className = 'progress';
+                    var sub2barText = document.createElement('div');
+                    sub2barText.className = 'progress-bar';
+                    sub2barText.innerHTML = String(instruction.duration / 60) + ' Minuten';
+                    sub2barText.setAttribute('role', 'progressbar');
+                    sub2barText.setAttribute('aria-valuenow', '0');
+                    sub2barText.setAttribute('aria-valuemin', '0');
+                    sub2barText.setAttribute('aria-valuemax', '100');
                     var sub2desc = document.createElement('div');
                     var sub2descText = document.createTextNode(instruction.description);
                     sub1.appendChild(sub1a).appendChild(sub1aText);
