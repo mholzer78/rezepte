@@ -131,15 +131,13 @@ if (recipe) {
                     let sub1cText = document.createElement('i');
                     sub1cText.className = 'fas fa-hourglass-start';
 
-                    let sub2bar = document.createElement('div');
-                    sub2bar.className = 'progress';
-                    let sub2barText = document.createElement('div');
-                    sub2barText.className = 'progress-bar';
-                    sub2barText.innerHTML = String(instruction.duration/60) + ' Minuten';
-                    sub2barText.setAttribute('role', 'progressbar');
-                    sub2barText.setAttribute('aria-valuenow', '0');
-                    sub2barText.setAttribute('aria-valuemin', '0');
-                    sub2barText.setAttribute('aria-valuemax', '100');
+                    let sub2progress = document.createElement('div');
+                    sub2progress.className = 'progress';
+                    let sub2progressBar = document.createElement('div');
+                    sub2progressBar.className = 'progress-bar';
+                    let sub2progressText = document.createElement('div');
+                    sub2progressText.className = 'progress-bar';
+                    sub2progressText.innerHTML = String(instruction.duration/60) + ' Minuten';
 
                     let sub2desc = document.createElement('div');
                     let sub2descText = document.createTextNode(instruction.description);
@@ -148,8 +146,9 @@ if (recipe) {
                     sub1.appendChild(sub1b).appendChild(sub1bText);
                     sub1.appendChild(sub1c).appendChild(sub1cText);
 
-                    sub2.appendChild(sub2bar).appendChild(sub2barText);
-                    sub2.appendChild(sub2desc).appendChild(sub2descText);
+                    sub2.appendChild(sub2progress).appendChild(sub2progressBar);
+                    sub2.appendChild(sub2progress).appendChild(sub2progressText);
+                    sub2.appendChild(sub2desc).appendChild(sub2progress);
                     
                     div.appendChild(sub1);
                     div.appendChild(sub2);

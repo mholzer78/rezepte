@@ -22,10 +22,6 @@ body {
     .play {
         font-size: 2rem;
     }
-    .progressBar {
-        border: 1px solid lightgrey;
-        text-align: center;
-    }
     #ingredients {
         .row {
             align-items: center;
@@ -48,5 +44,21 @@ body {
                 }
             }
         }
+    }
+}
+
+.progress {
+    position: relative;
+    width: 100%;
+    background-color: lightgray;
+    .progressBar {
+        width: 50%;
+        background-color: darkgray;
+    }
+    .progressText {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
     }
 }
