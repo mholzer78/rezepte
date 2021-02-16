@@ -2,17 +2,17 @@
     {
         "type": "step",
         "credentials": ["Butter"],
-        "description": "Butter im Topf bei mittlerer Hitze schmelzen"
+        "description": "im Topf bei mittlerer Hitze schmelzen"
     },
     {
         "type": "step",
         "credentials": ["Mehl"],
-        "description": "Mehl dazugeben und so lange umrühren, bis die Masse glatt ist"
+        "description": "dazugeben und so lange umrühren, bis die Masse glatt ist"
     },
     {
         "type": "step",
         "credentials": ["Milch"],
-        "description": "Unter ständigem Rhren die Milch zugeben und erneut so lange rühren bis die Sauce glatt ist"
+        "description": "unter ständigem Rühren zugeben und erneut so lange rühren bis die Sauce glatt ist"
     },
     {
         "type": "break",
@@ -25,17 +25,17 @@
     {
         "type": "step",
         "credentials": ["Käse"],
-        "description": "Käse in die Sauce einrühren bis er vollständig zergangen ist"
+        "description": "in die Sauce einrühren bis er vollständig zergangen ist"
     },
     {
         "type": "step",
         "credentials": ["Schinken","Knoblauch","Muskat"],
-        "description": "Schinken, Knoblauch und Muskat in die Sauce einrühren und danach auf die Seite stellen"
+        "description": "in die Sauce einrühren und danach auf die Seite stellen"
     },
     {
         "type": "step",
         "credentials": ["Nudeln"],
-        "description": "Nudeln in kochendes Wasser geben"
+        "description": "in kochendes Wasser geben"
     },
     {
         "type": "break",
@@ -63,6 +63,6 @@
             "mode": "Ober/Unterhitze",
             "degrees": 220 
         },
-        "description": "Ofen 220° Ober/Unterhitze ca 25 Minuten backen bis alles goldbraun ist"
+        "description": "ca. 25 Minuten backen bis alles goldbraun ist"
     }
 ]

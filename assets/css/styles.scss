@@ -1,9 +1,43 @@
-.card-body {
-    padding: 0 1rem;
-}
-
 body {
-    background: lightgray;
+    background: #dddddd;
+    .bold {
+        font-weight: bold;
+    }
+}
+.card {
+    background: none;
+    border: 0;
+    &:first-child {
+        .card-header {
+            border-radius: 1rem 0 0 0;
+        }
+    }
+    &:last-child {
+        .card-header {
+            border-radius: 0 0 1rem 0;
+        }
+    }
+    .card-body {
+        padding: 0 1rem;
+        background: #ffffff;
+    }
+    .card-header {
+        background: #457B9D;
+        color: #ffffff;
+        border: 0;
+        &:not(:last-child) {
+            border-bottom: 1px solid #ffffff;
+        }
+    }
+}
+.row {
+    flex-wrap: nowrap;
+    > div {
+        padding: 0.5rem;
+        &:nth-child(3) {
+            margin-left: auto;
+        }
+    }
 }
 #dishes {
     .card {
@@ -15,19 +49,22 @@ body {
         display: flex;
         flex-direction: column;
     }
-    .row {
-        border-bottom: 1px solid lightgrey;
-    }
     .check,
     .play {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    #description {
+        .row {
+            padding: 1rem 0;
+        }
     }
     #ingredients {
         .row {
+            border-bottom: 1px solid #dddddd;
             align-items: center;
             &.checked {
                 order: 100;
-                color: darkgray;
+                color: #dddddd;
                 .fa-square:before {
                     content: "\f14a"
                 }
@@ -36,9 +73,10 @@ body {
     }
     #instructions {
         .row {
+            border-bottom: 1px solid #dddddd;
             align-items: center;
             &.checked {
-                color: darkgray;                
+                color: #dddddd;                
                 .fa-square:before {
                     content: "\f14a"
                 }
@@ -50,15 +88,28 @@ body {
 .progress {
     position: relative;
     width: 100%;
-    background-color: lightgray;
+    background-color: #626868;
     .progressBar {
         width: 50%;
-        background-color: darkgray;
+        background-color: #457B9D;
     }
     .progressText {
         position: absolute;
-        top: 0;
+        top: 50%;
         width: 100%;
         text-align: center;
+        color: #ffffff;
     }
+}
+
+#timer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid #457B9D;
+    border-width: 0 0 1px 1px;
 }
