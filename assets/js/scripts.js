@@ -30,29 +30,29 @@ if (recipe) {
             var credentials = JSON.parse(this.responseText);
             for (var _i = 0, credentials_1 = credentials; _i < credentials_1.length; _i++) {
                 var credential = credentials_1[_i];
-                var div = document.createElement("div");
-                div.className = 'row';
-                div.addEventListener("click", function () {
+                var row = document.createElement("div");
+                row.className = 'row';
+                row.addEventListener("click", function () {
                     this.classList.toggle("checked");
                 });
-                var sub1 = document.createElement("div");
-                sub1.className = 'col-1 check';
-                var sub2 = document.createElement("div");
-                sub2.className = 'col-2';
-                var sub3 = document.createElement("div");
-                sub3.className = 'col-9';
-                var sub1text = document.createElement('i');
-                sub1text.className = 'far fa-square';
+                var col1 = document.createElement("div");
+                col1.className = 'check';
+                var col2 = document.createElement("div");
+                col2.className = '';
+                var col3 = document.createElement("div");
+                col3.className = '';
+                var div1text = document.createElement('i');
+                div1text.className = 'far fa-square';
                 var tempText = credential.amount + ' ' + credential.unit;
                 if (credential.appendix) {
                     tempText = tempText + ' (' + credential.appendix + ')';
                 }
-                var sub2text = document.createTextNode(credential.name);
-                var sub3text = document.createTextNode(tempText);
-                div.appendChild(sub1).appendChild(sub1text);
-                div.appendChild(sub2).appendChild(sub2text);
-                div.appendChild(sub3).appendChild(sub3text);
-                document.querySelector('#ingredients div.card-body').appendChild(div);
+                var div2text = document.createTextNode(credential.name);
+                var div3text = document.createTextNode(tempText);
+                row.appendChild(col1).appendChild(div1text);
+                row.appendChild(col2).appendChild(div2text);
+                row.appendChild(col3).appendChild(div3text);
+                document.querySelector('#ingredients div.card-body').appendChild(row);
             }
         }
     };

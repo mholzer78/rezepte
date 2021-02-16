@@ -11,12 +11,16 @@
 </head>
 
 <body>
-    <h1>rezepte.die-holzers.at</h1>
+    <header class="container">
+        <h1>rezepte<span class="small">.die-holzers.at</span></h1>
+    </header>
+
     <div class="container">
         <div id="dishes" class="row">
 
         </div>
     </div>
+
     <div id="recipe" class="container d-none">
         <div class="card">
             <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#description" aria-expanded="true" aria-controls="collapseOne">
@@ -55,14 +59,17 @@
             </div>
         </div>
     </div>
+
     <div id="timer" class="d-none2">
         <div>
-            <span id="timerLeft">10:00</span>
+            <i class="fas fa-times"></i>
         </div>
+        <div id="timerLeft">10:00</div>
         <div>
             <i class="fas fa-pause"></i>
         </div>
     </div>
+
     <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" async="" src="assets/js/scripts.js"></script>

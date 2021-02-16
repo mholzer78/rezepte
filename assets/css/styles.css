@@ -1,5 +1,19 @@
 body {
+  margin-bottom: 3.5rem;
   background: #dddddd;
+}
+
+body h1 {
+  background: #626868;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1;
+  font-size: 1.75rem;
+  padding-bottom: 0.25em;
+}
+
+body .small {
+  font-size: 0.5em;
 }
 
 body .bold {
@@ -9,14 +23,6 @@ body .bold {
 .card {
   background: none;
   border: 0;
-}
-
-.card:first-child .card-header {
-  border-radius: 1rem 0 0 0;
-}
-
-.card:last-child .card-header {
-  border-radius: 0 0 1rem 0;
 }
 
 .card .card-body {
@@ -44,6 +50,7 @@ body .bold {
 
 .row > div:nth-child(3) {
   margin-left: auto;
+  text-align: right;
 }
 
 #dishes .card {
@@ -71,7 +78,7 @@ body .bold {
 
 #recipe #ingredients .row.checked {
   order: 100;
-  color: #dddddd;
+  color: #aaaaaa;
 }
 
 #recipe #ingredients .row.checked .fa-square:before {
@@ -84,7 +91,7 @@ body .bold {
 }
 
 #recipe #instructions .row.checked {
-  color: #dddddd;
+  color: #aaaaaa;
 }
 
 #recipe #instructions .row.checked .fa-square:before {
@@ -111,13 +118,21 @@ body .bold {
 }
 
 #timer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0.5rem 1rem;
   background: #ffffff;
-  font-size: 2rem;
+  font-size: 1.25rem;
   text-align: center;
-  border: 1px solid #457B9D;
-  border-width: 0 0 1px 1px;
+  border: 1px solid #626868;
+  border-width: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+#timer #timerLeft {
+  padding: 0 1rem;
 }
