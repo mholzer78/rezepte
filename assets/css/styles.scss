@@ -63,8 +63,10 @@ body {
     }
     #ingredients {
         .row {
-            border-bottom: 1px solid #626868;
             align-items: center;
+            &:not(:last-child) {
+                border-bottom: 1px solid #626868;
+            }
             &.checked {
                 order: 100;
                 color: #aaaaaa;
@@ -76,8 +78,10 @@ body {
     }
     #instructions {
         .row {
-            border-bottom: 1px solid #626868;
             align-items: center;
+            &:not(:last-child) {
+                border-bottom: 1px solid #626868;
+            }
             &.checked {
                 color: #aaaaaa;                
                 .fa-square:before {

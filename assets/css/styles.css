@@ -72,8 +72,11 @@ body .bold {
 }
 
 #recipe #ingredients .row {
-  border-bottom: 1px solid #626868;
   align-items: center;
+}
+
+#recipe #ingredients .row:not(:last-child) {
+  border-bottom: 1px solid #626868;
 }
 
 #recipe #ingredients .row.checked {
@@ -86,8 +89,11 @@ body .bold {
 }
 
 #recipe #instructions .row {
-  border-bottom: 1px solid #626868;
   align-items: center;
+}
+
+#recipe #instructions .row:not(:last-child) {
+  border-bottom: 1px solid #626868;
 }
 
 #recipe #instructions .row.checked {
