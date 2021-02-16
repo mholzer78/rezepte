@@ -85,9 +85,7 @@ if (recipe) {
 
                     let div2a = document.createElement('div');
                     div2a.className = 'bold';
-                    if (instruction.credentials) {
-                        let div2aText = document.createTextNode(instruction.credentials.join(', '));
-                    }
+                    let div2aText = document.createTextNode(instruction.credentials.join(', '));
 
                     let div2b = document.createElement('div');
                     let div2bText = document.createTextNode(instruction.description);

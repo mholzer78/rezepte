@@ -80,9 +80,7 @@ if (recipe) {
                     div1aText.className = 'far fa-square';
                     var div2a = document.createElement('div');
                     div2a.className = 'bold';
-                    if (instruction.credentials) {
-                        var div2aText = document.createTextNode(instruction.credentials.join(', '));
-                    }
+                    var div2aText = document.createTextNode(instruction.credentials.join(', '));
                     var div2b = document.createElement('div');
                     var div2bText = document.createTextNode(instruction.description);
                     col1.appendChild(div1a).appendChild(div1aText);
