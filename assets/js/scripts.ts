@@ -35,6 +35,7 @@ if (recipe) {
                 let row = document.createElement("div");
                 row.className = 'row';
                 row.addEventListener("click", function () {
+                    console.log('3', this);
                     this.classList.toggle("checked");
                 });
                 let col1 = document.createElement("div");
@@ -71,6 +72,7 @@ if (recipe) {
                     let row = document.createElement("div");
                     row.className = 'row';
                     row.addEventListener("click", function () {
+                        console.log('2', this);
                         this.classList.toggle("checked");
                     });
                     let col1 = document.createElement("div");
@@ -102,6 +104,7 @@ if (recipe) {
                     let row = document.createElement("div");
                     row.className = 'row';
                     row.addEventListener("click", function () {
+                        console.log('1', this);
                         this.classList.toggle("checked");
                     });
                     let col1 = document.createElement("div");

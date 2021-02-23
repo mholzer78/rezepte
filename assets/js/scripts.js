@@ -93,7 +93,8 @@ if (recipe) {
                 else if (instruction.type == 'break') {
                     var row = document.createElement("div");
                     row.className = 'row';
-                    row.addEventListener("click", function () {
+                    row.addEventListener("click", function (e) {
+                        console.log(e.target);
                         this.classList.toggle("checked");
                     });
                     var col1 = document.createElement("div");
